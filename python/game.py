@@ -7,7 +7,7 @@ class Game:
     def __init__(self, title: str, description: str, developed_by: Iterable[Developer]):
         self._title: str = title
         self._description: str = description
-        self._developed_by: List[Developer] = [developer for developer in developed_by]
+        self._developed_by: List[Developer] = list(developed_by)
         if len(self._developed_by) == 0:
             raise ValueError("A game must have at least one developer")
         
