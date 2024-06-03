@@ -2,7 +2,7 @@ class Employee:
     def __init__(self, name: str):
         if not Employee.is_valid_name(name):
             raise ValueError(f"Invalid name: {name}")
-        self._name = name
+        self._name: str = name
 
     @staticmethod
     def is_valid_name(name: str) -> bool:

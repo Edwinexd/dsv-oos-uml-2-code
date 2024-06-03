@@ -1,16 +1,17 @@
 from datetime import datetime
+from typing import Optional
 
 from organisation import Organisation
 
 class Award:
     def __init__(self, motivation: str, at: datetime, issuer: Organisation, for_game):
-        self._motivation = motivation
-        self._at = at
-        self._issuer = issuer
-        self._for_game = for_game
+        self._motivation: str = motivation
+        self._at: datetime = at
+        self._issuer: Organisation = issuer
+        self._for_game: str = for_game
         # In Java this is implied as null by default but in Python
         # we need to set it explicitly so we have an instance variable
-        self._edited_at = None
+        self._edited_at: Optional[datetime] = None
 
     def get_issuer(self) -> Organisation:
         return self._issuer
