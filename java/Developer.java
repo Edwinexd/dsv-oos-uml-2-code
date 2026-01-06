@@ -9,5 +9,7 @@ public class Developer extends Employee {
         for (AcademicDiploma diploma : diplomas) {
             earned.add(diploma);
         }
-    }    
+    }
+
+    public List<AcademicDiploma> getEarned() { return new LinkedList<>(earned); }
 }

@@ -22,4 +22,23 @@ public class Game {
     public String getDescription() { return description; }
 
     public Iterable<Developer> getDevelopers() { return developedBy; }
+
+    public boolean checkAwardWinningRequiresQualifiedTeam() {
+        // Award.allInstances()->exists(a | a.forGame = self)
+        boolean hasAward = Award.ALL_AWARDS.stream()
+            .anyMatch(a -> a.getForGame() == this);
+        
+        // implies: if no award, constraint is satisfied
+        if (!hasAward) {
+            return true;
+        }
+        
+        // developedBy->forAll(d | d.earned->includes(...) or ...)
+        return developedBy.stream()
+            .allMatch(d -> 
+                d.getEarned().contains(AcademicDiploma.MASTER) ||
+                d.getEarned().contains(AcademicDiploma.LICENTIATE) ||
+                d.getEarned().contains(AcademicDiploma.DOCTORATE)
+            );
+    }
 }
