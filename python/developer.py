@@ -8,3 +8,5 @@ class Developer(Employee):
         super().__init__(name)
         self._earned: List[AcademicDiploma] = list(diplomas)
 
+    def get_earned(self) -> List[AcademicDiploma]:
+        return list(self._earned)

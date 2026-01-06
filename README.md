@@ -1,2 +1,4 @@
-# dsv-oos-uml-2-code
-Code/Material for the OOS video "UML 2 CODE"
+# OOS & PROG1 - UML 2 CODE
+
+Collection of code and material for the OOS video "UML 2 CODE" and the PROG1 lecture on the same topic.
+
